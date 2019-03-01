@@ -19,30 +19,40 @@ public final class ImgClassify {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int32 num_img = 1;</code>
+     * <code>string ID = 1;</code>
+     */
+    java.lang.String getID();
+    /**
+     * <code>string ID = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIDBytes();
+
+    /**
+     * <code>int32 num_img = 2;</code>
      */
     int getNumImg();
 
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     java.util.List<com.proto.ImgClassify.ImgClassify.imgs.img> 
         getAllImgList();
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     com.proto.ImgClassify.ImgClassify.imgs.img getAllImg(int index);
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     int getAllImgCount();
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     java.util.List<? extends com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder> 
         getAllImgOrBuilderList();
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder getAllImgOrBuilder(
         int index);
@@ -60,6 +70,7 @@ public final class ImgClassify {
       super(builder);
     }
     private imgs() {
+      iD_ = "";
       allImg_ = java.util.Collections.emptyList();
     }
 
@@ -87,15 +98,21 @@ public final class ImgClassify {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              iD_ = s;
+              break;
+            }
+            case 16: {
 
               numImg_ = input.readInt32();
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 allImg_ = new java.util.ArrayList<com.proto.ImgClassify.ImgClassify.imgs.img>();
-                mutable_bitField0_ |= 0x00000002;
+                mutable_bitField0_ |= 0x00000004;
               }
               allImg_.add(
                   input.readMessage(com.proto.ImgClassify.ImgClassify.imgs.img.parser(), extensionRegistry));
@@ -116,7 +133,7 @@ public final class ImgClassify {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
           allImg_ = java.util.Collections.unmodifiableList(allImg_);
         }
         this.unknownFields = unknownFields.build();
@@ -724,44 +741,78 @@ public final class ImgClassify {
     }
 
     private int bitField0_;
-    public static final int NUM_IMG_FIELD_NUMBER = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object iD_;
+    /**
+     * <code>string ID = 1;</code>
+     */
+    public java.lang.String getID() {
+      java.lang.Object ref = iD_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iD_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIDBytes() {
+      java.lang.Object ref = iD_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        iD_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NUM_IMG_FIELD_NUMBER = 2;
     private int numImg_;
     /**
-     * <code>int32 num_img = 1;</code>
+     * <code>int32 num_img = 2;</code>
      */
     public int getNumImg() {
       return numImg_;
     }
 
-    public static final int ALL_IMG_FIELD_NUMBER = 2;
+    public static final int ALL_IMG_FIELD_NUMBER = 3;
     private java.util.List<com.proto.ImgClassify.ImgClassify.imgs.img> allImg_;
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     public java.util.List<com.proto.ImgClassify.ImgClassify.imgs.img> getAllImgList() {
       return allImg_;
     }
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     public java.util.List<? extends com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder> 
         getAllImgOrBuilderList() {
       return allImg_;
     }
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     public int getAllImgCount() {
       return allImg_.size();
     }
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     public com.proto.ImgClassify.ImgClassify.imgs.img getAllImg(int index) {
       return allImg_.get(index);
     }
     /**
-     * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+     * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
      */
     public com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder getAllImgOrBuilder(
         int index) {
@@ -782,11 +833,14 @@ public final class ImgClassify {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, iD_);
+      }
       if (numImg_ != 0) {
-        output.writeInt32(1, numImg_);
+        output.writeInt32(2, numImg_);
       }
       for (int i = 0; i < allImg_.size(); i++) {
-        output.writeMessage(2, allImg_.get(i));
+        output.writeMessage(3, allImg_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -797,13 +851,16 @@ public final class ImgClassify {
       if (size != -1) return size;
 
       size = 0;
+      if (!getIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, iD_);
+      }
       if (numImg_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, numImg_);
+          .computeInt32Size(2, numImg_);
       }
       for (int i = 0; i < allImg_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, allImg_.get(i));
+          .computeMessageSize(3, allImg_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -820,6 +877,8 @@ public final class ImgClassify {
       }
       com.proto.ImgClassify.ImgClassify.imgs other = (com.proto.ImgClassify.ImgClassify.imgs) obj;
 
+      if (!getID()
+          .equals(other.getID())) return false;
       if (getNumImg()
           != other.getNumImg()) return false;
       if (!getAllImgList()
@@ -835,6 +894,8 @@ public final class ImgClassify {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getID().hashCode();
       hash = (37 * hash) + NUM_IMG_FIELD_NUMBER;
       hash = (53 * hash) + getNumImg();
       if (getAllImgCount() > 0) {
@@ -975,11 +1036,13 @@ public final class ImgClassify {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        iD_ = "";
+
         numImg_ = 0;
 
         if (allImgBuilder_ == null) {
           allImg_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           allImgBuilder_.clear();
         }
@@ -1011,11 +1074,12 @@ public final class ImgClassify {
         com.proto.ImgClassify.ImgClassify.imgs result = new com.proto.ImgClassify.ImgClassify.imgs(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
+        result.iD_ = iD_;
         result.numImg_ = numImg_;
         if (allImgBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             allImg_ = java.util.Collections.unmodifiableList(allImg_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.allImg_ = allImg_;
         } else {
@@ -1070,6 +1134,10 @@ public final class ImgClassify {
 
       public Builder mergeFrom(com.proto.ImgClassify.ImgClassify.imgs other) {
         if (other == com.proto.ImgClassify.ImgClassify.imgs.getDefaultInstance()) return this;
+        if (!other.getID().isEmpty()) {
+          iD_ = other.iD_;
+          onChanged();
+        }
         if (other.getNumImg() != 0) {
           setNumImg(other.getNumImg());
         }
@@ -1077,7 +1145,7 @@ public final class ImgClassify {
           if (!other.allImg_.isEmpty()) {
             if (allImg_.isEmpty()) {
               allImg_ = other.allImg_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureAllImgIsMutable();
               allImg_.addAll(other.allImg_);
@@ -1090,7 +1158,7 @@ public final class ImgClassify {
               allImgBuilder_.dispose();
               allImgBuilder_ = null;
               allImg_ = other.allImg_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               allImgBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAllImgFieldBuilder() : null;
@@ -1129,15 +1197,84 @@ public final class ImgClassify {
       }
       private int bitField0_;
 
+      private java.lang.Object iD_ = "";
+      /**
+       * <code>string ID = 1;</code>
+       */
+      public java.lang.String getID() {
+        java.lang.Object ref = iD_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          iD_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ID = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIDBytes() {
+        java.lang.Object ref = iD_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          iD_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ID = 1;</code>
+       */
+      public Builder setID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        iD_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ID = 1;</code>
+       */
+      public Builder clearID() {
+        
+        iD_ = getDefaultInstance().getID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ID = 1;</code>
+       */
+      public Builder setIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        iD_ = value;
+        onChanged();
+        return this;
+      }
+
       private int numImg_ ;
       /**
-       * <code>int32 num_img = 1;</code>
+       * <code>int32 num_img = 2;</code>
        */
       public int getNumImg() {
         return numImg_;
       }
       /**
-       * <code>int32 num_img = 1;</code>
+       * <code>int32 num_img = 2;</code>
        */
       public Builder setNumImg(int value) {
         
@@ -1146,7 +1283,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>int32 num_img = 1;</code>
+       * <code>int32 num_img = 2;</code>
        */
       public Builder clearNumImg() {
         
@@ -1158,9 +1295,9 @@ public final class ImgClassify {
       private java.util.List<com.proto.ImgClassify.ImgClassify.imgs.img> allImg_ =
         java.util.Collections.emptyList();
       private void ensureAllImgIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           allImg_ = new java.util.ArrayList<com.proto.ImgClassify.ImgClassify.imgs.img>(allImg_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1168,7 +1305,7 @@ public final class ImgClassify {
           com.proto.ImgClassify.ImgClassify.imgs.img, com.proto.ImgClassify.ImgClassify.imgs.img.Builder, com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder> allImgBuilder_;
 
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public java.util.List<com.proto.ImgClassify.ImgClassify.imgs.img> getAllImgList() {
         if (allImgBuilder_ == null) {
@@ -1178,7 +1315,7 @@ public final class ImgClassify {
         }
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public int getAllImgCount() {
         if (allImgBuilder_ == null) {
@@ -1188,7 +1325,7 @@ public final class ImgClassify {
         }
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public com.proto.ImgClassify.ImgClassify.imgs.img getAllImg(int index) {
         if (allImgBuilder_ == null) {
@@ -1198,7 +1335,7 @@ public final class ImgClassify {
         }
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder setAllImg(
           int index, com.proto.ImgClassify.ImgClassify.imgs.img value) {
@@ -1215,7 +1352,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder setAllImg(
           int index, com.proto.ImgClassify.ImgClassify.imgs.img.Builder builderForValue) {
@@ -1229,7 +1366,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder addAllImg(com.proto.ImgClassify.ImgClassify.imgs.img value) {
         if (allImgBuilder_ == null) {
@@ -1245,7 +1382,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder addAllImg(
           int index, com.proto.ImgClassify.ImgClassify.imgs.img value) {
@@ -1262,7 +1399,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder addAllImg(
           com.proto.ImgClassify.ImgClassify.imgs.img.Builder builderForValue) {
@@ -1276,7 +1413,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder addAllImg(
           int index, com.proto.ImgClassify.ImgClassify.imgs.img.Builder builderForValue) {
@@ -1290,7 +1427,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder addAllAllImg(
           java.lang.Iterable<? extends com.proto.ImgClassify.ImgClassify.imgs.img> values) {
@@ -1305,12 +1442,12 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder clearAllImg() {
         if (allImgBuilder_ == null) {
           allImg_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           allImgBuilder_.clear();
@@ -1318,7 +1455,7 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public Builder removeAllImg(int index) {
         if (allImgBuilder_ == null) {
@@ -1331,14 +1468,14 @@ public final class ImgClassify {
         return this;
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public com.proto.ImgClassify.ImgClassify.imgs.img.Builder getAllImgBuilder(
           int index) {
         return getAllImgFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder getAllImgOrBuilder(
           int index) {
@@ -1348,7 +1485,7 @@ public final class ImgClassify {
         }
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public java.util.List<? extends com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder> 
            getAllImgOrBuilderList() {
@@ -1359,14 +1496,14 @@ public final class ImgClassify {
         }
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public com.proto.ImgClassify.ImgClassify.imgs.img.Builder addAllImgBuilder() {
         return getAllImgFieldBuilder().addBuilder(
             com.proto.ImgClassify.ImgClassify.imgs.img.getDefaultInstance());
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public com.proto.ImgClassify.ImgClassify.imgs.img.Builder addAllImgBuilder(
           int index) {
@@ -1374,7 +1511,7 @@ public final class ImgClassify {
             index, com.proto.ImgClassify.ImgClassify.imgs.img.getDefaultInstance());
       }
       /**
-       * <code>repeated .gesture_rpc.imgs.img all_img = 2;</code>
+       * <code>repeated .gesture_rpc.imgs.img all_img = 3;</code>
        */
       public java.util.List<com.proto.ImgClassify.ImgClassify.imgs.img.Builder> 
            getAllImgBuilderList() {
@@ -1387,7 +1524,7 @@ public final class ImgClassify {
           allImgBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.proto.ImgClassify.ImgClassify.imgs.img, com.proto.ImgClassify.ImgClassify.imgs.img.Builder, com.proto.ImgClassify.ImgClassify.imgs.imgOrBuilder>(
                   allImg_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           allImg_ = null;
@@ -2139,14 +2276,14 @@ public final class ImgClassify {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021ImgClassify.proto\022\013gesture_rpc\"Z\n\004imgs" +
-      "\022\017\n\007num_img\030\001 \001(\005\022&\n\007all_img\030\002 \003(\0132\025.ges" +
-      "ture_rpc.imgs.img\032\031\n\003img\022\022\n\nsingle_img\030\001" +
-      " \003(\005\".\n\nclassified\022\017\n\007num_img\030\001 \001(\005\022\017\n\007c" +
-      "lasses\030\002 \003(\t2U\n\017ClassifyService\022B\n\016Class" +
-      "ifyImages\022\021.gesture_rpc.imgs\032\027.gesture_r" +
-      "pc.classified\"\000(\0010\001B\027\n\025com.proto.ImgClas" +
-      "sifyb\006proto3"
+      "\n\021ImgClassify.proto\022\013gesture_rpc\"f\n\004imgs" +
+      "\022\n\n\002ID\030\001 \001(\t\022\017\n\007num_img\030\002 \001(\005\022&\n\007all_img" +
+      "\030\003 \003(\0132\025.gesture_rpc.imgs.img\032\031\n\003img\022\022\n\n" +
+      "single_img\030\001 \003(\005\".\n\nclassified\022\017\n\007num_im" +
+      "g\030\001 \001(\005\022\017\n\007classes\030\002 \003(\t2U\n\017ClassifyServ" +
+      "ice\022B\n\016ClassifyImages\022\021.gesture_rpc.imgs" +
+      "\032\027.gesture_rpc.classified\"\000(\0010\001B\027\n\025com.p" +
+      "roto.ImgClassifyb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2165,7 +2302,7 @@ public final class ImgClassify {
     internal_static_gesture_rpc_imgs_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_gesture_rpc_imgs_descriptor,
-        new java.lang.String[] { "NumImg", "AllImg", });
+        new java.lang.String[] { "ID", "NumImg", "AllImg", });
     internal_static_gesture_rpc_imgs_img_descriptor =
       internal_static_gesture_rpc_imgs_descriptor.getNestedTypes().get(0);
     internal_static_gesture_rpc_imgs_img_fieldAccessorTable = new
